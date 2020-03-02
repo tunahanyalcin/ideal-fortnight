@@ -1,0 +1,45 @@
+THIS IS FOR PYTHON
+'''Goal is to open a data txt into python,
+convert the commas into dots,
+then spread those two columns into 2 individual lists'''
+
+#First copied the data into this fn below:
+str1 = "3,0	83,0\n" \
+"3,1	79,0\n" \
+"3,2	53,0\n" \
+"3,3	48,0\n" \
+"3,4	33,0\n" \
+"3,5	19,0\n" \
+"3,6	12,0\n" \
+"3,7	6,0\n" \
+"3,8	2,0\n" \
+"3,9	3,0\n" \    
+"4,0	3,0\n" \   
+"4,1	4,0\n" \
+"4,2	2,0\n" \
+"4,3	3,0\n" \
+"4,4	3,0\n" \
+"4,5	5,0\n" \
+"4,6	4,0\n" \
+#Note the \n" \ indices had to be added after the copy-paste,
+# a little time consuming but better then the alternative
+new = str1.replace(",",".")
+
+print(new)
+#after getting the print on the console, I copied the output
+#into a file I created called ehe
+#Then from it I executed the below function
+#Btw the above function and below function has to be seperated in different windows, they get mixed up somehow
+
+
+
+
+data = open("ehe", "r")
+lst = []
+for line in data:
+    lst.append([ float(x) for x in line.split()])
+
+column1 = [ x[0] for x in lst]
+column2 = [ x[1] for x in lst]
+
+print(column1)
